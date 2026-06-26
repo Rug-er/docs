@@ -1,0 +1,95 @@
+---
+title: "Logs & Activity Viewer — Ruger Bot Dashboard"
+sidebarTitle: "Logs & Activity"
+description: "Browse, filter, and export your server's full event history — moderation actions, command usage, member events, and bot errors — from one place."
+---
+
+The Logs & Activity page gives you a complete, searchable record of everything your bot has seen and done in your server. Whether you need to audit a moderation action, confirm a command was run, or diagnose a bot error, every event is captured and timestamped here. Logs are organized into categories so you can zero in on exactly what you need without wading through unrelated entries.
+
+## Log Categories
+
+<Tabs>
+  <Tab title="Moderation">
+    Records all moderation actions taken through the bot, including:
+
+    - **Kicks** — member removed from the server
+    - **Bans** — member banned, including reason if provided
+    - **Mutes** — member muted, with duration
+    - **Warns** — formal warnings issued to a member
+    - **Message Deletes** — messages removed by a moderator via the bot
+
+    Each entry shows the acting moderator, the target member, the action, and a timestamp.
+  </Tab>
+  <Tab title="Commands">
+    A full record of every bot command executed in your server:
+
+    - Which command was run (e.g., `/warn`, `/play`, `/stats`)
+    - The Discord user who triggered it
+    - The channel where it was used
+    - The exact date and time
+
+    Use this category to audit command usage or verify that automated commands fired correctly.
+  </Tab>
+  <Tab title="Member Events">
+    Tracks member lifecycle changes in your Discord server:
+
+    - **Joins** — new members entering the server
+    - **Leaves** — members leaving or being removed
+    - **Role Changes** — roles added or removed from a member via the bot
+
+    Pair this category with the Moderation category to build a complete picture of a member's history.
+  </Tab>
+  <Tab title="Bot Events">
+    System-level events for the bot process itself:
+
+    - **Restarts** — when and why the bot restarted
+    - **Errors** — exceptions or failures the bot encountered
+    - **Config Reloads** — every time a config reload was triggered and whether it succeeded
+
+    Start here when diagnosing unexpected bot behavior or investigating a **Degraded** status.
+  </Tab>
+</Tabs>
+
+---
+
+## Filter Logs
+
+Narrow the log view using the filter bar at the top of the Logs & Activity page.
+
+<Steps>
+  <Step title="Open the Logs & Activity page">
+    Select your server dashboard and click **Logs & Activity** in the left sidebar.
+  </Step>
+  <Step title="Select a category">
+    Use the **Category** dropdown to limit results to one log type: Moderation, Commands, Member Events, or Bot Events. Leave it set to **All** to search across every category at once.
+  </Step>
+  <Step title="Enter a username">
+    Type a Discord username or user ID into the **User** filter box to see only events involving that specific member.
+  </Step>
+  <Step title="Set a date range">
+    Click the **From** and **To** date pickers to define the time window you want to search. Leave both blank to search all available history.
+  </Step>
+  <Step title="Click Apply Filters">
+    The log table refreshes instantly to show only entries that match your criteria. The active filter summary bar above the table reminds you what filters are in effect.
+  </Step>
+</Steps>
+
+<Tip>
+  Save time on repeat investigations by bookmarking filtered views in your browser. For example, bookmark the Logs & Activity page with Category = Moderation and a 7-day date range to create a one-click moderation audit view.
+</Tip>
+
+---
+
+## Export Logs
+
+<Note>
+  Logs are retained for **30 days**. To preserve records beyond that window, export them as a CSV file using the **Export** button in the top-right corner of the Logs & Activity page. Apply filters first to export only the records you need, or export with no filters to download the full 30-day history.
+</Note>
+
+Click **Export**, choose your format (CSV is currently the only supported format), and the file downloads immediately to your browser. Each row in the exported file includes the event category, type, involved user(s), channel, and UTC timestamp.
+
+---
+
+## Log Entry Detail
+
+Click any row in the log table to expand a detail panel showing the full event record, including any metadata captured at the time (e.g., the full text of a deleted message, the reason attached to a ban, or the error stack trace for a Bot Event).

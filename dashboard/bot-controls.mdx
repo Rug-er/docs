@@ -1,0 +1,77 @@
+---
+title: "Bot Controls Panel — Ruger Bot Dashboard"
+sidebarTitle: "Bot Controls"
+description: "Start, stop, restart, and configure your Ruger Bot from the dashboard. Learn each control action and when to use it for your server."
+---
+
+The Bot Controls panel gives you direct control over the bot process running for your server. From here you can restart the bot after a configuration change, trigger a config reload without downtime, check the live status indicator, or fully disconnect the bot from your server if needed. All actions require at minimum an **Admin** role on the server dashboard.
+
+## Bot Status Indicators
+
+Before taking any action, check the status indicator at the top of the Bot Controls panel:
+
+| Indicator | Meaning |
+|---|---|
+| 🟢 **Online** | Bot is running normally and responding to commands |
+| 🔴 **Offline** | Bot process is stopped or unreachable |
+| 🟡 **Degraded** | Bot is running but errors have been detected — commands may be intermittent |
+
+<Tip>
+  If the bot shows **Degraded** status for more than 5 minutes, a full Restart usually clears the underlying error. Check the [Logs & Activity](/dashboard/logs-and-activity) page for error details before and after the restart.
+</Tip>
+
+---
+
+## Available Actions
+
+<CardGroup cols={2}>
+  <Card title="Restart Bot" icon="arrows-rotate">
+    Safely shuts down and relaunches the bot process for this server. The restart cycle takes approximately **30 seconds**.
+  </Card>
+  <Card title="Force Config Reload" icon="rotate">
+    Applies any pending configuration changes instantly — without a full restart. The bot stays online throughout.
+  </Card>
+  <Card title="Disconnect Bot" icon="plug-circle-xmark">
+    Removes the bot from the server entirely. Requires **Admin** role. The bot will leave your Discord server and stop responding.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Force Config Reload** is the preferred way to apply configuration changes. It is faster than a full restart and causes zero downtime — use it whenever a restart is not strictly necessary.
+</Note>
+
+---
+
+## Restart the Bot
+
+<Steps>
+  <Step title="Open the server dashboard">
+    Log in to Ruger Bot and select the server you want to manage.
+  </Step>
+  <Step title="Click Bot Controls in the sidebar">
+    The Bot Controls panel opens, showing the current status indicator and available action buttons.
+  </Step>
+  <Step title="Click Restart Bot">
+    The **Restart Bot** button is prominently displayed in the Actions section. Click it to begin the restart sequence.
+  </Step>
+  <Step title="Confirm in the dialog">
+    A confirmation dialog appears summarizing the action. Click **Confirm Restart** to proceed, or **Cancel** to abort.
+  </Step>
+  <Step title="Watch the status indicator">
+    The indicator will switch from **Online → Offline** as the process shuts down, then back to **Online** within approximately 30 seconds once the bot has fully restarted.
+  </Step>
+</Steps>
+
+<Warning>
+  Restarting the bot temporarily interrupts **all bot commands** in the server for the duration of the restart cycle (~30 seconds). Plan restarts during low-traffic periods to minimize disruption to your members.
+</Warning>
+
+---
+
+## Force a Config Reload
+
+To apply configuration changes without restarting, click **Force Config Reload** on the Bot Controls panel. No confirmation dialog is shown — the reload begins immediately. Watch the status indicator; it will briefly flash and return to **Online** once the new configuration is active.
+
+## Disconnect the Bot
+
+Click **Disconnect Bot** to remove Ruger Bot from your Discord server entirely. Confirm the action in the dialog that appears. After disconnection, the bot leaves your server and all dashboard controls become inactive. To re-add the bot, you must re-invite it through the standard invite flow.

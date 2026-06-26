@@ -1,0 +1,83 @@
+---
+title: "Linked Accounts for Server Dashboard Access"
+sidebarTitle: "Linked Accounts"
+description: "Grant specific Discord accounts access to your server's Ruger Bot dashboard without transferring server ownership."
+---
+
+The linked accounts system lets server owners grant other Discord users access to their server's Ruger Bot dashboard. This is useful when someone — such as a community manager or moderator — needs to manage bot settings or review logs but does not own the Discord server itself. Access is always explicit: a user only sees your dashboard after you add them.
+
+## Server Owner vs. Linked Accounts
+
+The Discord server owner receives full dashboard access automatically — no setup needed. Linked accounts are any additional Discord users the server owner explicitly invites to the dashboard. Each linked account is assigned a role (Admin or Staff) that controls what they can do once inside. See [Roles & Permissions](/account/roles-and-permissions) for a full breakdown.
+
+**Example use case:** Your community manager runs day-to-day moderation but doesn't own the Discord server. You add their Discord account as a linked account with the Admin role so they can adjust bot configuration without you being involved in every change.
+
+## Link an Account to Your Server Dashboard
+
+<Steps>
+  <Step title="Open the server dashboard">
+    Log in to Ruger Bot and select the server you want to manage from your dashboard home.
+  </Step>
+  <Step title="Click Manage Access">
+    In the left-hand sidebar, click **Manage Access** to open the access control panel.
+  </Step>
+  <Step title="Click + Add Account">
+    Select the **+ Add Account** button at the top of the access list.
+  </Step>
+  <Step title="Enter the Discord User ID or username">
+    Paste the user's Discord User ID, or type their username into the search field. Using a Discord User ID is the most reliable method and avoids ambiguity between users with similar names.
+  </Step>
+  <Step title="Assign a role">
+    Choose either **Admin** or **Staff** from the role dropdown. Refer to the [Roles & Permissions](/account/roles-and-permissions) page if you're unsure which to pick.
+  </Step>
+  <Step title="Click Save">
+    Click **Save** to confirm. The user can now access the dashboard immediately after logging in with their Discord account on the Ruger Bot website.
+  </Step>
+</Steps>
+
+<Note>
+  The linked account must log in to Ruger Bot using Discord OAuth on the Ruger Bot website to activate their access. Simply being added to the list is not enough — they need to authenticate at least once.
+</Note>
+
+## Find a Discord User ID
+
+Discord User IDs are the most reliable way to add an account because usernames can change. To copy a User ID, you first need to enable Developer Mode in Discord.
+
+<Tabs>
+  <Tab title="Enable Developer Mode">
+    <Steps>
+      <Step title="Open Discord">
+        Launch the Discord desktop or web app and make sure you are logged in.
+      </Step>
+      <Step title="Go to User Settings → Advanced">
+        Click the gear icon next to your username, then select **Advanced** from the left-hand menu.
+      </Step>
+      <Step title="Toggle Developer Mode on">
+        Enable the **Developer Mode** toggle. The change takes effect immediately — no restart required.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Copy a User ID">
+    <Steps>
+      <Step title="Locate the user in Discord">
+        Find the user in any server member list, DM, or message history.
+      </Step>
+      <Step title="Right-click their username">
+        Right-click (or long-press on mobile) their username or avatar to open the context menu.
+      </Step>
+      <Step title="Click Copy User ID">
+        Select **Copy User ID** from the menu. The ID is now in your clipboard, ready to paste into Ruger Bot.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Frequently Asked Questions
+
+<Accordion title="Can the same account access multiple server dashboards?">
+  Yes. A single Discord account can be linked to as many server dashboards as needed. After logging in, the user sees all servers they've been granted access to listed on their Ruger Bot dashboard home.
+</Accordion>
+
+<Accordion title="What if I link the wrong account?">
+  Open **Manage Access** for the relevant server, find the account in the list, and click the remove button (trash icon) next to their name. Their access is revoked immediately.
+</Accordion>

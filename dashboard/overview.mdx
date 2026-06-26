@@ -1,0 +1,62 @@
+---
+title: "Server Dashboard Overview — Ruger Bot"
+sidebarTitle: "Overview"
+description: "Explore your per-server dashboard: monitor bot status, view quick stats, browse recent activity, and navigate to all management sections."
+---
+
+Every Discord server you manage in Ruger Bot gets its own dedicated dashboard panel. From here you can check on your bot at a glance, review what happened recently, and jump straight into any management task — all from one place. The dashboard uses a dark interface with green accent indicators so critical status information stands out immediately.
+
+<Note>
+  The dashboard is only visible to Discord accounts that the server admin has explicitly authorized. If you cannot see a server after logging in, ask your admin to grant you access.
+</Note>
+
+## Dashboard Sections
+
+### Bot Status
+
+The top of every server dashboard displays a live status indicator showing whether your bot is **Online** (green), **Offline** (red), or **Degraded** (yellow). This updates in real time — no need to refresh the page.
+
+### Quick Stats
+
+Below the status indicator you'll find three at-a-glance counters:
+
+| Stat | What it shows |
+|---|---|
+| **Commands Run Today** | Total commands executed in this server since midnight UTC |
+| **Members** | Current member count pulled from Discord |
+| **Active Users** | Unique members who triggered a bot command in the last 24 hours |
+
+### Recent Activity Feed
+
+The Recent Activity feed surfaces the last 20 bot events for this server — moderation actions, command uses, member joins, and bot restarts. Each entry shows the event type, the user involved, and a timestamp. Click any entry to jump to the full log detail.
+
+### Navigation
+
+Use the left sidebar to move between dashboard sections:
+
+- **Bot Controls** — start, stop, and restart your bot
+- **Manage Access** — control who can view and operate this dashboard
+- **Logs & Activity** — search and export the full event history
+
+---
+
+## Explore the Dashboard
+
+<CardGroup cols={2}>
+  <Card title="Bot Controls" icon="power-off" href="/dashboard/bot-controls">
+    Start, stop, restart, or force a config reload on your bot — all without touching the server.
+  </Card>
+  <Card title="Managing Access" icon="users" href="/dashboard/managing-access">
+    Add or remove Discord accounts and assign Admin or Staff roles for this server's dashboard.
+  </Card>
+  <Card title="Logs & Activity" icon="list" href="/dashboard/logs-and-activity">
+    Filter and export moderation actions, command usage, member events, and bot errors.
+  </Card>
+  <Card title="Getting Started" icon="rocket" href="/dashboard/managing-access">
+    New to Ruger Bot? Start by setting up access so your team can collaborate.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Pin your most-used server dashboard for quick access by clicking the **bookmark icon** in the top-right corner of the dashboard header. Pinned servers appear at the top of your server list on every login.
+</Tip>

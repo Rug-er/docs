@@ -1,0 +1,81 @@
+---
+title: "Quickstart: Set Up Your Server Dashboard in 5 Minutes"
+sidebarTitle: "Quickstart"
+description: "Go from zero to a fully configured Ruger Bot server dashboard in under five minutes — login, bot invite, dashboard setup, and your first command, all in one guide."
+---
+
+This guide walks you through the fastest path to a working Ruger Bot setup. By the time you finish, you'll have the bot live in your server, your dashboard open, optional team access configured, and your first custom command active. The whole process takes under five minutes for most server administrators.
+
+<Steps>
+  <Step title="Log in with Discord">
+    Head to [rugerbotapp.com](https://rugerbotapp.com) and click **Login with Discord**. Authorize Ruger Bot on the Discord screen that appears — it only requests your username, avatar, and server list. You'll land on your Ruger Bot dashboard showing all servers where you hold **Manage Server** permission.
+
+    <Tip>
+      If a server you manage isn't showing up, double-check that your Discord role in that server includes the **Manage Server** permission. Even server owners can miss this if they use a custom primary role.
+    </Tip>
+  </Step>
+
+  <Step title="Add Ruger Bot to Your Server">
+    From the server list, click **Add to Server** next to the server you want to configure. Complete the Discord bot-invite prompt — select the correct server, review the permissions list, and click **Authorize**. Ruger Bot joins the server and the entry in your dashboard updates to show **Configured**.
+
+    For a full breakdown of what each permission does, see [Add Bot to Server](/getting-started/adding-the-bot).
+  </Step>
+
+  <Step title="Open the Server Dashboard">
+    Click your server's name in the dashboard list to open its overview panel. Here you'll find a live summary of recent activity, member stats, active commands, and any pending moderation alerts. Bookmark this page — it's your main control center for the server.
+  </Step>
+
+  <Step title="Link Team Accounts (Optional)">
+    If you manage the server with co-admins or moderators, you can grant them dashboard access without giving them your Discord credentials. Navigate to **Dashboard → Manage Access** and enter the Discord usernames of the accounts you want to link.
+
+    Linked accounts sign in with their own Discord login and see a scoped view of your server's dashboard based on the access level you assign them.
+
+    <Note>
+      Linked accounts must have Ruger Bot authorized in their own Discord OAuth session before they can sign in. Share the [login guide](/getting-started/login-with-discord) with your team if they haven't signed up yet.
+    </Note>
+  </Step>
+
+  <Step title="Configure Your First Command">
+    Go to **Bot Configuration → Commands** and click **New Command**. Give it a trigger (for example, `/rules`), write the response text you want the bot to post, and set the channels or roles that can use it. Click **Save** — the command is live in your server immediately, no restart required.
+
+    <Tabs>
+      <Tab title="Slash Command">
+        Set the **Trigger Type** to **Slash Command** and enter a name such as `rules` or `help`. Discord registers the command globally for your server within a few minutes of saving.
+      </Tab>
+      <Tab title="Text Prefix Command">
+        Set the **Trigger Type** to **Prefix** and enter a prefix like `!` and a keyword like `rules`. The bot responds whenever a member types `!rules` in an allowed channel.
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Set Up a Welcome Message">
+    Navigate to **Bot Configuration → Welcome Messages** and toggle the feature on. Choose the channel where the bot should post, then write your welcome message using the available variables:
+
+    | Variable | Replaced With |
+    |---|---|
+    | `{user}` | The new member's Discord mention |
+    | `{server}` | Your server's name |
+    | `{member_count}` | Current total member count |
+
+    Click **Save** and test it by using the **Send Preview** button. The bot posts a sample message in your chosen channel so you can verify the formatting before a real member triggers it.
+  </Step>
+</Steps>
+
+## What's Next
+
+You're all set with the basics. Explore these areas to get more out of Ruger Bot.
+
+<CardGroup cols={2}>
+  <Card title="Server Dashboard" icon="gauge" href="/dashboard/overview">
+    Dig into the full dashboard overview — activity feeds, member management, and real-time stats.
+  </Card>
+  <Card title="Bot Configuration" icon="sliders" href="/configuration/commands">
+    Build out your full command library, set up auto-moderation rules, and customize bot responses.
+  </Card>
+  <Card title="Manage Access" icon="users" href="/dashboard/managing-access">
+    Link Discord accounts to share dashboard access with moderators and co-admins.
+  </Card>
+  <Card title="Activity Logs" icon="list" href="/dashboard/logs-and-activity">
+    Review a full audit trail of moderation actions, command usage, and member events.
+  </Card>
+</CardGroup>

@@ -1,0 +1,84 @@
+---
+title: "Configure Bot Commands in the Ruger Dashboard"
+sidebarTitle: "Commands"
+description: "Enable, disable, and customize individual bot commands for your server. Organize commands by category and control exactly what your members can use."
+---
+
+The Commands configuration page gives you full control over every command Ruger Bot exposes to your server members. From here you can enable or disable individual commands, rewrite their descriptions, and fine-tune per-command behavior — all without touching Discord's native settings.
+
+## Command Categories
+
+Ruger Bot organizes commands into four categories to make navigation easier. Each category groups commands by their general purpose, so you can quickly find what you're looking for whether you're tightening up moderation or just toggling a fun feature.
+
+| Command | Category | Default State | Description |
+|---|---|---|---|
+| `/ban` | Moderation | Enabled | Ban a member from the server |
+| `/kick` | Moderation | Enabled | Kick a member from the server |
+| `/warn` | Moderation | Enabled | Issue a formal warning to a member |
+| `/mute` | Moderation | Enabled | Temporarily mute a member |
+| `/ping` | Utility | Enabled | Check bot latency |
+| `/serverinfo` | Info | Enabled | Display server statistics |
+| `/roll` | Fun | Disabled | Roll a dice |
+
+## Disable a Command
+
+Disabling a command removes it from your server entirely — it won't appear in `/help` and members won't be able to invoke it in Discord.
+
+<Steps>
+  <Step title="Open the server dashboard">
+    Log in to the Ruger dashboard and select your server from the sidebar.
+  </Step>
+  <Step title="Navigate to Commands">
+    Go to **Configuration → Commands** in the left navigation menu.
+  </Step>
+  <Step title="Find the command">
+    Scroll through the list or use the search bar to locate the command you want to disable.
+  </Step>
+  <Step title="Toggle the switch">
+    Flip the toggle next to the command name to **Disabled**. The switch will turn grey to confirm the change.
+  </Step>
+  <Step title="Save your changes">
+    Click **Save Changes** at the bottom of the page to apply the new state.
+  </Step>
+</Steps>
+
+<Note>
+  Disabling a command hides it from `/help` and prevents it from running in Discord entirely. Members who attempt to use a disabled command will receive no response from the bot.
+</Note>
+
+<Tip>
+  Use the search bar at the top of the commands list to quickly find a specific command instead of scrolling through every category.
+</Tip>
+
+## Customize a Command's Description
+
+You can override the default description for any command. The custom description appears in `/help` output and in Discord's slash command autocomplete panel.
+
+<Steps>
+  <Step title="Expand the command settings">
+    Click the command name in the list to expand its settings panel.
+  </Step>
+  <Step title="Edit the description">
+    Locate the **Description** field and type your custom description text.
+  </Step>
+  <Step title="Save">
+    Click **Save** within the expanded panel to apply your changes immediately.
+  </Step>
+</Steps>
+
+## Command Categories at a Glance
+
+<CardGroup cols={2}>
+  <Card title="Moderation" icon="shield">
+    Commands for managing members — banning, kicking, warning, and muting. Enabled by default on all servers.
+  </Card>
+  <Card title="Utility" icon="wrench">
+    Helpful server tools like latency checks. Lightweight and safe to leave enabled for all members.
+  </Card>
+  <Card title="Info" icon="circle-info">
+    Commands that display server and bot statistics. Great for transparency with your community.
+  </Card>
+  <Card title="Fun" icon="face-smile">
+    Optional entertainment commands like dice rolls. Disabled by default — enable them if your server culture calls for it.
+  </Card>
+</CardGroup>

@@ -1,0 +1,91 @@
+---
+title: "Set Up Welcome Messages for New Server Members"
+sidebarTitle: "Welcome Messages"
+description: "Send a personalized embed to every new member who joins your server. Customize the channel, message template, embed color, and server rules link in minutes."
+---
+
+Welcome messages give every new member a warm, branded greeting the moment they join your server. Ruger Bot sends a customizable embed to the channel of your choice, filled in automatically with details like the member's username, your server name, and the current member count. You control the copy, the color, and whether to point new members straight to your rules.
+
+## Available Settings
+
+| Setting | What It Controls |
+|---|---|
+| **Welcome Channel** | The channel where the bot posts the embed |
+| **Message Template** | The text body of the embed, built with template variables |
+| **Embed Color** | The colored left-border accent on the Discord embed |
+| **Include Server Rules Link** | Toggle to append a link to your designated rules channel |
+
+## Template Variables
+
+Build a dynamic message by inserting any of the following variables into your template. The bot replaces them with live values when the embed is sent.
+
+| Variable | Replaced With |
+|---|---|
+| `{user}` | A mention that pings the new member |
+| `{username}` | The member's Discord username without a ping |
+| `{server}` | Your server's name |
+| `{membercount}` | The total member count at the moment they joined |
+| `{joindate}` | The date and time the member joined |
+
+## Example Template
+
+Here's a ready-to-use template that combines several variables into a friendly greeting:
+
+```
+Welcome to **{server}**, {user}! 🎉
+You're member number **{membercount}**.
+Please read the rules in #rules and enjoy your stay!
+```
+
+Feel free to adjust the wording, add emoji, or include additional context like links to important channels.
+
+## Configure the Welcome Message
+
+<Steps>
+  <Step title="Open Welcome Messages">
+    Go to **Configuration → Welcome Messages** in the Ruger dashboard.
+  </Step>
+  <Step title="Enable the feature">
+    Toggle **Welcome Messages** to **Enabled**. The configuration panel will expand.
+  </Step>
+  <Step title="Select a channel">
+    Choose the channel where new member greetings should be posted from the **Welcome Channel** dropdown.
+  </Step>
+  <Step title="Write your message template">
+    Edit the **Message Template** field. Use any of the template variables listed above to personalize the embed text.
+  </Step>
+  <Step title="Pick an embed color">
+    Click the color swatch next to **Embed Color** and choose an accent color for the embed's left border.
+  </Step>
+  <Step title="Enable the rules link">
+    Toggle **Include Server Rules** if you want the embed to include a direct link to your rules channel.
+  </Step>
+  <Step title="Preview the embed">
+    Click **Preview** to see a fully rendered version of your welcome embed before it goes live.
+  </Step>
+  <Step title="Save">
+    Click **Save** to activate your welcome message. The bot will send it to the next member who joins.
+  </Step>
+</Steps>
+
+<Tip>
+  Click **Send Test Message** to fire a preview embed into your welcome channel right now, using your own Discord account as the sample new member. This is the fastest way to verify formatting and variable output without waiting for someone to join.
+</Tip>
+
+<Note>
+  If you delete the welcome channel from your Discord server, Ruger Bot will automatically disable welcome messages and notify you in the dashboard. Select a new channel and save to re-enable the feature.
+</Note>
+
+## Template Tips
+
+<Accordion title="How do I mention the member without a ping?">
+  Use `{username}` instead of `{user}`. The `{user}` variable creates a live mention that triggers a Discord notification for the new member; `{username}` inserts just the text of their username without pinging them.
+</Accordion>
+
+<Accordion title="Can I use markdown formatting in the template?">
+  Yes — Discord markdown works inside the message template. Wrap text in `**double asterisks**` for bold, `*single asterisks*` for italic, and use backticks for inline code. Keep in mind that embed bodies do not support headings (`#`).
+</Accordion>
+
+<Accordion title="Can I send the welcome message as a DM instead of a channel post?">
+  DM welcome messages are not currently supported. The bot always posts to the channel you specify in the **Welcome Channel** setting. Members who have DMs disabled from server members would miss a DM anyway, so a channel post is the more reliable choice.
+</Accordion>

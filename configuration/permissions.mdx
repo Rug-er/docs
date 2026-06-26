@@ -1,0 +1,86 @@
+---
+title: "Set Command Permissions for Roles and Channels"
+sidebarTitle: "Permissions"
+description: "Restrict which Discord roles and channels can access specific bot commands. Combine role and channel rules to build precise permission boundaries for your server."
+---
+
+Command permissions let you decide exactly who can use a command and where they can use it. Rather than giving every member access to every enabled command, you can scope each command down to specific Discord roles, specific channels, or both at the same time. This keeps powerful moderation commands out of the wrong hands and reduces noise in channels where certain commands don't belong.
+
+## Types of Restrictions
+
+Ruger Bot supports two independent restriction layers that you can apply to any command:
+
+<CardGroup cols={2}>
+  <Card title="Role Restrictions" icon="user-shield">
+    Lock a command so only members holding one or more specified roles can invoke it. Everyone else is silently blocked.
+  </Card>
+  <Card title="Channel Restrictions" icon="hashtag">
+    Limit a command to one or more specific channels. Members with the right role still can't use it outside those channels.
+  </Card>
+</CardGroup>
+
+## Restrict a Command to Specific Roles
+
+Use role restrictions to ensure that commands like `/ban` or `/warn` are only available to your moderation team.
+
+<Steps>
+  <Step title="Open Commands">
+    Go to **Configuration → Commands** in the Ruger dashboard.
+  </Step>
+  <Step title="Expand the command">
+    Click the command name to open its settings panel.
+  </Step>
+  <Step title="Add a role">
+    Under **Allowed Roles**, click **+ Add Role**.
+  </Step>
+  <Step title="Select roles">
+    Choose one or more Discord roles from the dropdown. You can add multiple roles by repeating the selection.
+  </Step>
+  <Step title="Save">
+    Click **Save Changes** to apply the role restriction immediately.
+  </Step>
+</Steps>
+
+<Note>
+  If no role restrictions are set, all members — regardless of their roles — can use that command by default.
+</Note>
+
+## Restrict a Command to Specific Channels
+
+Channel restrictions are useful for commands like `/roll` or `/poll` that belong in a dedicated bot channel, not in general conversation.
+
+<Steps>
+  <Step title="Open Commands">
+    Go to **Configuration → Commands** in the Ruger dashboard.
+  </Step>
+  <Step title="Expand the command">
+    Click the command name to open its settings panel.
+  </Step>
+  <Step title="Add a channel">
+    Under **Allowed Channels**, click **+ Add Channel**.
+  </Step>
+  <Step title="Select a channel">
+    Pick the Discord channel from the dropdown. Repeat to add multiple channels.
+  </Step>
+  <Step title="Save">
+    Click **Save Changes** to apply the channel restriction.
+  </Step>
+</Steps>
+
+<Note>
+  You can combine role **and** channel restrictions on the same command. When both are set, a member must satisfy both conditions — holding an allowed role **and** posting in an allowed channel — to use the command.
+</Note>
+
+<Warning>
+  Discord server-level bot permissions take precedence over anything configured in the dashboard. If the bot lacks the **Manage Messages** permission in Discord, commands like `/purge` won't work even if they are fully enabled and unrestricted here. Always verify the bot's Discord permissions first when troubleshooting.
+</Warning>
+
+## Frequently Asked Questions
+
+<Accordion title="Can I set admin-only commands?">
+  Yes. Expand the command's settings, click **+ Add Role** under Allowed Roles, and select your server's admin role. Only members holding that role will be able to use the command. All other members are blocked regardless of their other roles.
+</Accordion>
+
+<Accordion title="What happens if a member tries to use a restricted command?">
+  By default, the bot silently ignores the invocation so the channel doesn't fill with error noise. You can switch this behavior to send an ephemeral error message visible only to that member — the option is in **Configuration → Commands → [command name] → Restriction Behavior**.
+</Accordion>

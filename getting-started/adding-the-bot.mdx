@@ -1,0 +1,52 @@
+---
+title: "Add Ruger Bot to Your Discord Server"
+sidebarTitle: "Add to Server"
+description: "Invite Ruger Bot to any Discord server you manage, grant the required permissions, and unlock the full server dashboard in under two minutes."
+---
+
+Before you can use Ruger Bot's dashboard features on a specific server, you need to invite the bot to that server as a member. Ruger Bot uses Discord's standard OAuth bot-invite flow — you select the target server, review the permissions the bot needs, and confirm. From that point forward, the server appears in your Ruger Bot dashboard and all configuration features become available.
+
+## Inviting the Bot
+
+<Steps>
+  <Step title="Log in to the Ruger Bot dashboard">
+    Go to [rugerbotapp.com](https://rugerbotapp.com) and sign in with Discord if you haven't already. See [Log in with Discord](/getting-started/login-with-discord) if you need help with this step.
+  </Step>
+  <Step title="Click 'Add to Server'">
+    On the server list page, locate the server entry that shows **Bot Not Added** and click the **Add to Server** button next to it. This opens Discord's bot authorization prompt in a new window.
+  </Step>
+  <Step title="Select your target server">
+    In the Discord OAuth prompt, use the **Select a server** dropdown to choose the Discord server you want Ruger Bot to join. Only servers where you hold the **Manage Server** permission are selectable.
+  </Step>
+  <Step title="Review the bot's permission requests">
+    Discord lists every permission Ruger Bot is requesting. Review the [Required Permissions](#required-permissions) table below to understand what each permission is used for. Deselecting required permissions may cause certain features to stop working.
+  </Step>
+  <Step title="Click Authorize — the bot joins">
+    Click **Authorize** on the Discord prompt. Discord adds Ruger Bot to your server as a bot member. You may be asked to complete a CAPTCHA verification before the authorization completes.
+  </Step>
+  <Step title="Return to your dashboard">
+    Close the Discord prompt and return to the Ruger Bot dashboard. Your server now appears in the list with a **Configured** status badge. Click on it to open the server dashboard and start configuring.
+  </Step>
+</Steps>
+
+## Required Permissions
+
+Ruger Bot needs the following permissions to operate correctly in your server. Grant all of them during the invite flow to ensure full functionality.
+
+| Permission | Why It's Needed |
+|---|---|
+| **Send Messages** | Post command responses, alerts, and welcome messages in channels. |
+| **Embed Links** | Send richly formatted embed cards for command output and activity summaries. |
+| **Read Message History** | Review recent messages for context during moderation actions and log generation. |
+| **Manage Messages** | Delete messages flagged by auto-moderation rules or manual moderator actions. |
+| **Manage Roles** | Assign and remove roles as part of reaction-role setups and automated workflows. |
+| **Kick Members** | Execute kick actions triggered from the dashboard or moderation commands. |
+| **Ban Members** | Execute ban actions triggered from the dashboard or moderation commands. |
+
+<Note>
+  For Ruger Bot to moderate or take action on a member, the bot's role must be positioned **above** that member's highest role in your server's role hierarchy. If the bot's role sits below a member's role, Discord will block the action. Drag the **Ruger Bot** role above your general member roles in **Server Settings → Roles** after the invite completes.
+</Note>
+
+<Tip>
+  The bot may appear offline in your member list for up to **60 seconds** after first joining while it completes its initialization handshake with the Ruger Bot backend. This is expected — wait a moment and refresh Discord before assuming something went wrong.
+</Tip>

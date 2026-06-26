@@ -1,0 +1,60 @@
+---
+title: "Dashboard Roles and Permissions in Ruger Bot"
+sidebarTitle: "Roles & Permissions"
+description: "Understand the Admin and Staff dashboard roles, what each can do, and how to change a linked account's role in Ruger Bot."
+---
+
+Ruger Bot's dashboard has two roles for linked accounts: **Admin** and **Staff**. Each role controls which features a user can view or modify inside the server dashboard. Assigning the right role keeps your bot configuration secure while still giving team members the access they need to do their jobs.
+
+## Role Comparison
+
+The table below shows every dashboard feature and which roles can use it.
+
+| Feature | Admin | Staff |
+|---|:---:|:---:|
+| View dashboard | ✅ | ✅ |
+| View logs | ✅ | ✅ |
+| Run bot commands from dashboard | ✅ | ✅ |
+| Restart bot | ✅ | ❌ |
+| Edit bot configuration | ✅ | ❌ |
+| Configure auto-mod | ✅ | ❌ |
+| Manage access list | ✅ | ❌ |
+| Disconnect bot | ✅ | ❌ |
+
+<Note>
+  The Discord server owner always has full Admin-level access to the dashboard, regardless of what appears in the access list. Ownership is determined by Discord and cannot be overridden inside Ruger Bot.
+</Note>
+
+<Note>
+  Dashboard roles (Admin and Staff) are **completely separate** from Discord server roles. A user who holds the Administrator role inside your Discord server does not automatically gain dashboard access in Ruger Bot — they must be explicitly added as a linked account and assigned a dashboard role.
+</Note>
+
+## Change a Linked Account's Role
+
+If you need to promote a Staff member to Admin, or demote an Admin to Staff, follow these steps.
+
+<Steps>
+  <Step title="Open Manage Access">
+    Log in to Ruger Bot, open your server dashboard, and click **Manage Access** in the sidebar.
+  </Step>
+  <Step title="Find the account">
+    Locate the linked account you want to update in the access list.
+  </Step>
+  <Step title="Click the role badge">
+    Click the role badge (displaying either **Admin** or **Staff**) shown next to their name. A dropdown menu will appear.
+  </Step>
+  <Step title="Select the new role">
+    Choose the role you want to assign — **Admin** or **Staff** — from the dropdown.
+  </Step>
+  <Step title="Click Save">
+    Click **Save** to apply the change. The new permissions take effect the next time the user loads the dashboard.
+  </Step>
+</Steps>
+
+<Warning>
+  Demoting an Admin to Staff removes their ability to edit bot settings, manage the access list, and perform other configuration actions. Before demoting, make sure at least one non-owner linked account retains the Admin role if you need someone else to manage settings on your behalf.
+</Warning>
+
+<Tip>
+  Assign the Staff role to team members who need to monitor logs and run bot commands but shouldn't be able to change bot configuration or auto-mod rules. This gives them the visibility they need without the risk of accidental setting changes.
+</Tip>

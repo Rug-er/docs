@@ -1,0 +1,78 @@
+---
+title: "Discord OAuth2 Authentication with Ruger Bot"
+sidebarTitle: "Discord OAuth"
+description: "Learn how Ruger Bot uses Discord OAuth2 to securely authenticate you — no separate password required, just your Discord account."
+---
+
+Ruger Bot uses Discord OAuth2 for all authentication. Instead of creating a separate username and password, you authorize Ruger Bot through Discord's own permission system. Once authorized, the platform reads your Discord profile and server list to identify which servers you manage and grant you access to the appropriate dashboards.
+
+## How It Works
+
+When you log in, Discord issues Ruger Bot a scoped access token — a limited credential that only permits the specific actions listed below. Ruger Bot never touches your password or gains broader access to your account outside of these declared scopes.
+
+### Permissions Requested
+
+<CardGroup cols={3}>
+  <Card title="`identify`" icon="user">
+    Reads your Discord username, avatar, and unique Discord ID so Ruger Bot can recognize your account.
+  </Card>
+  <Card title="`guilds`" icon="server">
+    Reads the list of Discord servers you belong to so the platform can show you the dashboards you have access to.
+  </Card>
+  <Card title="`guilds.members.read`" icon="shield-check">
+    Verifies your membership and roles in specific servers, confirming your access level for each dashboard.
+  </Card>
+</CardGroup>
+
+## Connect Your Discord Account
+
+Follow these steps to log in to Ruger Bot for the first time.
+
+<Steps>
+  <Step title="Visit the Ruger Bot website">
+    Open your browser and navigate to the Ruger Bot platform homepage.
+  </Step>
+  <Step title="Click Login with Discord">
+    Select the **Login with Discord** button on the landing page or sign-in screen.
+  </Step>
+  <Step title="Review the permissions">
+    Discord will display the authorization screen listing the scopes Ruger Bot is requesting. Read through each permission before proceeding.
+  </Step>
+  <Step title="Click Authorize">
+    Confirm the permissions by clicking **Authorize**. Discord will generate a scoped token and pass it securely to Ruger Bot.
+  </Step>
+  <Step title="Land on your dashboard">
+    You are automatically redirected to your Ruger Bot dashboard, where you'll see every server you manage or have been granted access to.
+  </Step>
+</Steps>
+
+## Revoke Access
+
+You can revoke Ruger Bot's access at any time directly from Discord.
+
+<Steps>
+  <Step title="Open Discord Settings">
+    In Discord, click the gear icon next to your username to open **User Settings**.
+  </Step>
+  <Step title="Go to Authorized Apps">
+    Navigate to **Authorized Apps** in the left-hand menu.
+  </Step>
+  <Step title="Find Ruger Bot">
+    Scroll through the list of authorized applications and locate **Ruger Bot**.
+  </Step>
+  <Step title="Click Deauthorize">
+    Click the **Deauthorize** button next to Ruger Bot and confirm the prompt.
+  </Step>
+</Steps>
+
+<Note>
+  Revoking Discord access immediately logs you out of the Ruger Bot dashboard and ends your active session. Your server configurations, bot settings, and linked account lists are **not** deleted — everything is preserved if you log back in.
+</Note>
+
+<Warning>
+  Ruger Bot never receives your Discord password. Authentication is handled entirely by Discord's OAuth2 flow, and Ruger Bot only holds a scoped access token with the permissions you explicitly approved.
+</Warning>
+
+<Tip>
+  If you change your Discord username, your Ruger Bot account profile updates automatically the next time you log in — no manual action required.
+</Tip>

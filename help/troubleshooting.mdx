@@ -1,0 +1,142 @@
+---
+title: "Troubleshooting Common Ruger Bot Issues"
+sidebarTitle: "Troubleshooting"
+description: "Step-by-step solutions for the most common Ruger Bot problems, from unresponsive commands to blank dashboards and missing servers."
+---
+
+Most issues with Ruger Bot come down to a permission setting, a configuration toggle, or a brief sync delay — all of which you can resolve directly from your dashboard. Work through the relevant section below to diagnose and fix the problem quickly.
+
+<Accordion title="Bot not responding to commands in Discord">
+  Before diving into settings, run through this quick checklist:
+
+  - Does the bot show a **green online indicator** in your dashboard header?
+  - Does the bot have permission to **read and send messages** in the channel where the command was used?
+  - Is the specific command **enabled** in Configuration → Commands?
+  - Does the user's role meet the **role restrictions** set for that command?
+
+  If any of those are unclear, follow these diagnostic steps:
+
+  <Steps>
+    <Step title="Check bot status">
+      Open your server dashboard and go to **Bot Controls**. Confirm the status reads **Online**. If it reads Offline or Degraded, click **Force Config Reload** and wait 60 seconds.
+    </Step>
+    <Step title="Verify the command is enabled">
+      Navigate to **Configuration → Commands**. Locate the command that isn't responding and confirm its toggle is switched on. Save any changes.
+    </Step>
+    <Step title="Check role permissions">
+      Navigate to **Configuration → Permissions**. Find the command in the permissions list and review which roles are allowed to use it. Add the affected role if it's missing, then save.
+    </Step>
+    <Step title="Confirm channel-level Discord permissions">
+      In Discord, open the channel settings and go to **Permissions**. Ensure Ruger Bot (or its role) has **View Channel**, **Send Messages**, and **Read Message History** enabled.
+    </Step>
+  </Steps>
+</Accordion>
+
+<Accordion title="I don't see my server in the dashboard">
+  There are three common reasons a server doesn't appear in your dashboard:
+
+  1. **Wrong Discord account** — You may be logged in with an account that doesn't have admin rights on that server.
+  2. **Missing Manage Server permission** — The dashboard only shows servers where your account holds the Manage Server permission in Discord.
+  3. **Bot not yet added** — If you've never added Ruger Bot to the server, it won't appear.
+
+  <Steps>
+    <Step title="Log out and log back in">
+      Click your avatar in the top-right corner of the dashboard and select **Log Out**. Then log in again with Discord, making sure to select the correct account if you manage multiple Discord profiles.
+    </Step>
+    <Step title="Verify your permissions in Discord">
+      Open Discord, select the server in question, and go to **Server Settings → Roles**. Confirm your role has the **Manage Server** permission checked.
+    </Step>
+    <Step title="Add the bot to your server">
+      If the bot hasn't been added yet, click **Add Bot to Server** on the Ruger Bot dashboard home screen and follow the OAuth flow to authorize it for your server.
+    </Step>
+  </Steps>
+</Accordion>
+
+<Accordion title="Bot was added but the server still doesn't appear">
+  After you authorize Ruger Bot through Discord's OAuth flow, there is a brief sync delay before the server appears in your dashboard.
+
+  <Steps>
+    <Step title="Wait and refresh">
+      Wait **60 seconds**, then hard-refresh the dashboard page (Ctrl + Shift + R on Windows/Linux, Cmd + Shift + R on macOS).
+    </Step>
+    <Step title="Log out and log back in">
+      If the server still doesn't appear after refreshing, log out of the dashboard completely and log back in with Discord. The login flow triggers a fresh server list sync.
+    </Step>
+  </Steps>
+
+  <Note>
+    If the server still doesn't appear after logging back in, confirm the bot was authorized with an account that has Manage Server permission. If you used a different account during the OAuth flow, the server may be associated with that account instead.
+  </Note>
+</Accordion>
+
+<Accordion title="Welcome messages aren't being sent">
+  If new members are joining but no welcome message is appearing in your server, work through the following checks:
+
+  <Steps>
+    <Step title="Confirm Welcome Messages is enabled">
+      Open **Configuration → Welcome Messages** in your server dashboard. Verify the feature toggle is switched **on** and that a welcome message template is saved.
+    </Step>
+    <Step title="Verify the welcome channel exists">
+      Check that the channel selected as your welcome channel still exists in your Discord server. If the channel was deleted or renamed, update the channel selection in the Welcome Messages settings and save.
+    </Step>
+    <Step title="Check bot permissions in the channel">
+      In Discord, open the welcome channel's settings and go to **Permissions**. Confirm Ruger Bot has both **Send Messages** and **Embed Links** enabled. Without Embed Links, formatted welcome cards will fail silently.
+    </Step>
+    <Step title="Send a test message">
+      Return to **Configuration → Welcome Messages** in the dashboard and click **Send Test Message**. If the test message doesn't appear in the channel, the issue is a permission or channel configuration problem. If it does appear, the feature is working and the earlier messages may have been missed during a restart window.
+    </Step>
+  </Steps>
+</Accordion>
+
+<Accordion title="Auto-mod is incorrectly flagging legitimate messages">
+  Over-eager auto-mod rules can interfere with normal conversation. Use these steps to tune the settings without disabling protection entirely:
+
+  <Steps>
+    <Step title="Add a bypass role">
+      Open **Configuration → Auto-Mod** and scroll to the **Bypass Roles** section. Add the role used by the affected users (for example, a Moderator or Trusted Member role). Members with a bypass role are exempt from all auto-mod checks.
+    </Step>
+    <Step title="Raise the spam detection threshold">
+      In the **Spam Detection** settings, increase the message-per-interval threshold to reduce false positives for fast-typing or bot-style users.
+    </Step>
+    <Step title="Review the Banned Words list">
+      Open the **Banned Words** list and scan for partial-word entries that might match common legitimate words. Remove or narrow any overly broad entries using the word boundary options.
+    </Step>
+  </Steps>
+
+  <Tip>
+    Use the **Auto-Mod Log** in Logs & Activity to review exactly which rule triggered each flag. This makes it much easier to identify the specific setting causing false positives.
+  </Tip>
+</Accordion>
+
+<Accordion title="I was removed from a server dashboard">
+  Dashboard access is controlled by the server owner and any accounts they have designated as dashboard admins. If you've lost access, you cannot restore it yourself.
+
+  Contact the **server owner** directly and ask them to re-add your Discord account via **Manage Access** inside the server dashboard. Only the server owner or an existing dashboard admin with the correct permissions can grant or restore access.
+
+  <Warning>
+    For security reasons, Ruger Bot support cannot restore dashboard access on behalf of a server owner. Access changes must always be initiated by the owner or an authorized admin.
+  </Warning>
+</Accordion>
+
+<Accordion title="Dashboard shows a blank screen after login">
+  A blank screen after logging in is usually caused by a stale browser cache, a corrupted session cookie, or a conflict with a browser extension.
+
+  <Steps>
+    <Step title="Clear cache and cookies">
+      Open your browser settings and clear cached images, files, and cookies for the Ruger Bot dashboard domain. Then reload the page and try logging in again.
+    </Step>
+    <Step title="Try an incognito or private window">
+      Open a new incognito or private browsing window, navigate to the dashboard, and log in. This bypasses extensions and cached data. If the dashboard loads correctly, the issue is specific to your main browser profile.
+    </Step>
+    <Step title="Try a different browser">
+      If the incognito window also shows a blank screen, open a completely different browser (for example, switch from Chrome to Firefox) and try logging in there.
+    </Step>
+    <Step title="Revoke and re-authorize Ruger Bot in Discord">
+      Open **Discord → User Settings → Authorized Apps**, find Ruger Bot, and click **Deauthorize**. Then return to the Ruger Bot dashboard and complete a fresh login through the Discord OAuth flow. This resets your session and clears any token issues.
+    </Step>
+  </Steps>
+</Accordion>
+
+<Note>
+  If none of the steps above resolve your issue, join the **Ruger Bot support server** via the invite link in the dashboard footer, or click the **Feedback** button to submit a detailed report directly to the Ruger Bot team.
+</Note>

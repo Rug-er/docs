@@ -1,0 +1,84 @@
+{
+  "projectType": "saas",
+  "projectName": "Ruger Bot",
+  "projectDescription": "A Discord bot management platform that lets server admins control their bot, configure commands, and monitor server activity through a web dashboard — all accessed via Discord OAuth.",
+  "theme": "luma",
+  "primaryColor": "#23a559",
+  "lightColor": "#57f287",
+  "darkColor": "#1a1a1a",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started/login-with-discord",
+              "getting-started/adding-the-bot",
+              "getting-started/quickstart"
+            ]
+          },
+          {
+            "group": "Server Dashboard",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/managing-access",
+              "dashboard/bot-controls",
+              "dashboard/logs-and-activity"
+            ]
+          },
+          {
+            "group": "Bot Configuration",
+            "pages": [
+              "configuration/commands",
+              "configuration/permissions",
+              "configuration/automod",
+              "configuration/welcome-messages"
+            ]
+          },
+          {
+            "group": "Account & Access",
+            "pages": [
+              "account/discord-oauth",
+              "account/linked-accounts",
+              "account/roles-and-permissions"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/faq",
+              "help/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Discord OAuth login — sign in directly with your Discord account",
+    "Per-server dashboards — each Discord server gets its own control panel",
+    "Bot controls — start, stop, restart, and configure the bot from the web",
+    "Linked account access — restrict dashboard access to specific Discord accounts",
+    "Role-based permissions — staff and admin tiers with granular access control",
+    "Command management — enable, disable, and customize bot commands",
+    "Activity logs — view bot events, moderation actions, and server activity",
+    "Auto-moderation settings — configure filters, thresholds, and responses",
+    "Welcome message customization — set channel, message template, and embed style",
+    "Real-time bot status indicator — see if the bot is online, offline, or degraded"
+  ],
+  "publicApiSurface": [
+    "GET /api/servers — list Discord servers the authenticated user manages",
+    "GET /api/servers/:id/dashboard — fetch dashboard data for a specific server",
+    "POST /api/servers/:id/bot/restart — restart the bot in a specific server",
+    "GET /api/servers/:id/commands — list configured commands",
+    "PATCH /api/servers/:id/commands/:name — update a command's settings",
+    "GET /api/servers/:id/logs — retrieve recent activity logs",
+    "GET /api/servers/:id/members — list linked accounts for a server dashboard",
+    "POST /api/servers/:id/members — link a Discord account to a server dashboard",
+    "DELETE /api/servers/:id/members/:userId — remove a linked account",
+    "GET /oauth/discord/callback — Discord OAuth2 callback endpoint"
+  ]
+}

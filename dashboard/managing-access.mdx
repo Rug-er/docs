@@ -1,0 +1,77 @@
+---
+title: "Managing Dashboard Access — Ruger Bot"
+sidebarTitle: "Managing Access"
+description: "Control who can view and operate your server's Ruger Bot dashboard by adding Discord accounts and assigning Admin or Staff roles."
+---
+
+By default, only the server owner can access a server's dashboard. To let teammates — moderators, admins, or support staff — log in and use the dashboard, you need to add their Discord accounts and assign them a role. Access is managed per-server, so you have full control over who sees what.
+
+## Access Roles
+
+Ruger Bot offers two dashboard roles for each server:
+
+| Role | Permissions |
+|---|---|
+| **Admin** | Full control — change settings, manage access, use all bot controls, view all logs |
+| **Staff** | Read-only plus limited controls — view bot status, browse logs, run approved commands; cannot change settings or manage access |
+
+---
+
+## Add an Account
+
+<Steps>
+  <Step title="Open the server dashboard">
+    Log in to Ruger Bot and select the server you want to manage from your server list.
+  </Step>
+  <Step title="Click Manage Access in the left sidebar">
+    The Manage Access page lists all accounts currently authorized for this server.
+  </Step>
+  <Step title="Click + Add Account">
+    A dialog box opens prompting you to search for a Discord user.
+  </Step>
+  <Step title="Enter the Discord username or user ID">
+    Type the full Discord username (e.g., `jane#1234` or the newer `@jane`) or paste the numeric user ID for a precise match.
+  </Step>
+  <Step title="Select their role">
+    Choose **Admin** or **Staff** from the role dropdown. You can change this at any time after saving.
+  </Step>
+  <Step title="Click Save">
+    The account is added immediately. The user can now see this server's dashboard the next time they log in with their Discord account.
+  </Step>
+</Steps>
+
+---
+
+## Remove an Account
+
+<Steps>
+  <Step title="Find the account in the access list">
+    Open **Manage Access** and locate the user you want to remove. Use the search box at the top of the list to filter by name.
+  </Step>
+  <Step title="Click the trash icon">
+    The trash icon appears on the right side of the user's row when you hover over it.
+  </Step>
+  <Step title="Confirm removal">
+    A confirmation dialog asks you to verify the action. Click **Remove** to finalize. The user loses dashboard access immediately.
+  </Step>
+</Steps>
+
+<Warning>
+  Removing your own account will lock you out of this server's dashboard. If this happens, only the server owner can restore your access. Double-check that you are not removing your own entry before confirming.
+</Warning>
+
+<Note>
+  The server owner's Discord account always has Admin access and cannot be removed from the access list. Their entry will not show a trash icon.
+</Note>
+
+---
+
+## Frequently Asked Questions
+
+<Accordion title="Can I give someone access to multiple servers?">
+  Yes. Access is managed independently for each server. To grant someone access to multiple servers, add their account to each server's access list separately by repeating the steps above for every server.
+</Accordion>
+
+<Accordion title="What can Staff accounts do?">
+  Staff accounts can view the bot's live status, browse and filter the Logs & Activity page, and run commands that have been pre-approved by an Admin. They cannot change bot settings, modify access lists, restart or disconnect the bot, or perform any other Admin-level action.
+</Accordion>

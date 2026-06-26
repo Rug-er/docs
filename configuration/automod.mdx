@@ -1,0 +1,128 @@
+---
+title: "Automate Rule Enforcement with Ruger Auto-Mod"
+sidebarTitle: "Auto-Mod"
+description: "Configure Ruger Bot to detect and act on rule violations automatically. Set up spam detection, banned words, link filters, and more without a moderator present."
+---
+
+Auto-moderation lets Ruger Bot enforce your server rules around the clock, even when no moderator is online. When a message triggers a configured rule, the bot reacts instantly — deleting the message, warning the member, or issuing a temporary mute — based on the action you define. Each rule is independent, so you can enable exactly the protections your community needs.
+
+## Available Auto-Mod Rules
+
+<CardGroup cols={2}>
+  <Card title="Spam Detection" icon="bolt">
+    Deletes messages sent too quickly in succession and optionally warns or mutes the offending member.
+  </Card>
+  <Card title="Banned Words" icon="ban">
+    Scans every message for words or phrases you specify and automatically removes matches.
+  </Card>
+  <Card title="Link Filter" icon="link-slash">
+    Blocks URLs posted in channels where links are not permitted.
+  </Card>
+  <Card title="Caps Lock Filter" icon="font">
+    Flags and removes messages where an excessive percentage of characters are uppercase.
+  </Card>
+  <Card title="Mass Mention" icon="at">
+    Intercepts messages that mention an unusually large number of users at once to prevent mention spam.
+  </Card>
+</CardGroup>
+
+## Enable Spam Detection
+
+Spam detection is the most commonly needed auto-mod rule. Configure a message threshold and choose how aggressively the bot should respond.
+
+<Steps>
+  <Step title="Open Auto-Mod">
+    Go to **Configuration → Auto-Mod** in the Ruger dashboard.
+  </Step>
+  <Step title="Enable the rule">
+    Toggle **Spam Detection** to **Enabled**.
+  </Step>
+  <Step title="Set the threshold">
+    Enter the message limit and time window — for example, **5 messages in 3 seconds**. The bot triggers when a member exceeds this rate.
+  </Step>
+  <Step title="Choose an action">
+    Select what the bot does when the threshold is crossed: **Delete**, **Warn**, or **Mute**.
+  </Step>
+  <Step title="Set a mute duration">
+    If you selected **Mute**, enter how long the mute should last (e.g., 10 minutes).
+  </Step>
+  <Step title="Save">
+    Click **Save** to activate spam detection on your server.
+  </Step>
+</Steps>
+
+## Configure the Banned Words List
+
+Add any words or phrases you want the bot to catch. Matches are case-insensitive and will trigger even when the word appears inside a longer word.
+
+<Steps>
+  <Step title="Open Banned Words">
+    Go to **Configuration → Auto-Mod → Banned Words**.
+  </Step>
+  <Step title="Add a word or phrase">
+    Click **+ Add Word** and type the word or phrase you want to filter.
+  </Step>
+  <Step title="Choose an action">
+    Select the response for this specific entry: **Delete only**, **Warn**, or **Mute**.
+  </Step>
+  <Step title="Confirm">
+    Click **Add** to save the entry to your list. It becomes active immediately.
+  </Step>
+</Steps>
+
+## Bypass Roles
+
+You can designate one or more Discord roles as trusted — any member holding a bypass role has their messages skipped entirely by auto-mod, regardless of content.
+
+<Note>
+  Auto-mod ignores messages from members who hold any role listed in **Bypass Roles**. Configure this list under **Configuration → Auto-Mod → Bypass Roles**.
+</Note>
+
+<Tip>
+  Add your moderator and admin roles to the Bypass Roles list so that staff messages are never accidentally deleted or flagged during enforcement actions.
+</Tip>
+
+<Warning>
+  Testing auto-mod rules with real users triggers the configured action immediately — the bot does not distinguish between a test and a real violation. Use a private channel with a test account when calibrating detection thresholds to avoid accidentally warning or muting legitimate members.
+</Warning>
+
+## Rule Settings Reference
+
+<Tabs>
+  <Tab title="Spam Detection">
+    | Setting | Description |
+    |---|---|
+    | Threshold | Number of messages allowed within the time window |
+    | Time Window | Duration in seconds for the threshold count |
+    | Action | Delete, Warn, or Mute |
+    | Mute Duration | Length of the auto-mute (if action is Mute) |
+  </Tab>
+  <Tab title="Banned Words">
+    | Setting | Description |
+    |---|---|
+    | Word / Phrase | The text to match (case-insensitive) |
+    | Action | Delete only, Warn, or Mute |
+    | Wildcard Match | Matches the string anywhere inside a word |
+  </Tab>
+  <Tab title="Link Filter">
+    | Setting | Description |
+    |---|---|
+    | Blocked Channels | Channels where all URLs are removed |
+    | Allowed Domains | Domains excluded from the filter (e.g., your own site) |
+    | Action | Delete only or Delete + Warn |
+  </Tab>
+  <Tab title="Caps Lock Filter">
+    | Setting | Description |
+    |---|---|
+    | Caps Percentage | Minimum % of uppercase characters to trigger (default 70%) |
+    | Minimum Length | Shortest message length to evaluate (ignores short outbursts) |
+    | Action | Delete only or Delete + Warn |
+  </Tab>
+  <Tab title="Mass Mention">
+    | Setting | Description |
+    |---|---|
+    | Mention Threshold | Number of unique mentions in one message to trigger |
+    | Action | Delete, Warn, or Mute |
+    | Mute Duration | Length of the auto-mute (if action is Mute) |
+  </Tab>
+</Tabs>

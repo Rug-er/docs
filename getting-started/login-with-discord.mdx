@@ -1,0 +1,52 @@
+---
+title: "Log in to Ruger Bot with Your Discord Account"
+sidebarTitle: "Discord Login"
+description: "Use Discord OAuth to sign in to Ruger Bot. No separate account needed — just authorize the app and land straight on your server dashboard."
+---
+
+Ruger Bot uses Discord OAuth to authenticate you, so there's no separate username or password to manage. When you click **Login with Discord**, you're taken directly to Discord's authorization screen where you review and approve the permissions Ruger Bot needs. Once you authorize, Discord redirects you back to your Ruger Bot dashboard — populated with every server where you have the **Manage Server** permission.
+
+## Signing In
+
+<Steps>
+  <Step title="Go to rugerbotapp.com">
+    Open [rugerbotapp.com](https://rugerbotapp.com) in your browser. On the homepage, click the **Login with Discord** button. You'll be redirected to Discord's official OAuth authorization page.
+  </Step>
+  <Step title="Review the requested permissions">
+    Discord displays a list of permissions Ruger Bot is requesting on your behalf. Read through these carefully before proceeding — see the [Requested Permissions](#what-ruger-bot-requests) section below for a full breakdown of what each permission is used for.
+  </Step>
+  <Step title="Click Authorize">
+    Once you're comfortable with the listed permissions, click the **Authorize** button on the Discord screen. Discord verifies your identity and generates a secure access token for Ruger Bot.
+  </Step>
+  <Step title="Land on your Ruger Bot dashboard">
+    Discord redirects you back to Ruger Bot, where your dashboard loads automatically. You'll see a list of every Discord server you manage — click any of them to open that server's control panel.
+  </Step>
+</Steps>
+
+## What Ruger Bot Requests
+
+Ruger Bot asks for the minimum permissions needed to identify you and list your servers. No message content or private data is ever accessed.
+
+<Accordion title="Read your username and avatar">
+  Ruger Bot reads your Discord display name and profile picture to personalize your dashboard header and activity log entries. This data is never shared or sold.
+</Accordion>
+
+<Accordion title="Read your server list">
+  To populate your server selector, Ruger Bot fetches the list of Discord servers your account belongs to. Only servers where you also hold **Manage Server** appear in your Ruger Bot dashboard.
+</Accordion>
+
+<Accordion title="Read Manage Server permission status">
+  Ruger Bot checks each server in your list for the **Manage Server** permission flag. This ensures that only authorized administrators can access and modify a server's dashboard configuration.
+</Accordion>
+
+<Note>
+  Only servers where your Discord account holds the **Manage Server** permission are shown in your Ruger Bot dashboard. If a server you own isn't appearing, confirm that your role in that server includes **Manage Server** — even server owners should verify this if they use a custom role setup.
+</Note>
+
+<Tip>
+  You can revoke Ruger Bot's OAuth access at any time. In Discord, go to **User Settings → Authorized Apps**, find Ruger Bot in the list, and click **Deauthorize**. Revoking access immediately signs you out of the Ruger Bot dashboard and removes the stored access token.
+</Tip>
+
+<Warning>
+  If you access the Ruger Bot dashboard without logging in — for example, via a shared link — you'll be granted read-only guest access and won't be able to change any settings, configure commands, or manage members. Log in with Discord to unlock full administrative control.
+</Warning>
