@@ -1,14 +1,14 @@
 ---
-title: "Discord OAuth2 Authentication with Ruger Bot"
+title: "Discord OAuth2 Login and Permissions for Ruger Bot"
 sidebarTitle: "Discord OAuth"
-description: "Learn how Ruger Bot uses Discord OAuth2 to securely authenticate you — no separate password required, just your Discord account."
+description: "Learn how Ruger Bot uses Discord OAuth2 to securely authenticate you — no separate password required, just your existing Discord account."
 ---
 
 Ruger Bot uses Discord OAuth2 for all authentication. Instead of creating a separate username and password, you authorize Ruger Bot through Discord's own permission system. Once authorized, the platform reads your Discord profile and server list to identify which servers you manage and grant you access to the appropriate dashboards.
 
 ## How It Works
 
-When you log in, Discord issues Ruger Bot a scoped access token — a limited credential that only permits the specific actions listed below. Ruger Bot never touches your password or gains broader access to your account outside of these declared scopes.
+When you log in, Discord asks you to approve a specific set of permissions for Ruger Bot. Ruger Bot only uses those permissions — it never touches your password and cannot access anything outside what you explicitly approved.
 
 ### Permissions Requested
 
@@ -39,7 +39,7 @@ Follow these steps to log in to Ruger Bot for the first time.
     Discord will display the authorization screen listing the scopes Ruger Bot is requesting. Read through each permission before proceeding.
   </Step>
   <Step title="Click Authorize">
-    Confirm the permissions by clicking **Authorize**. Discord will generate a scoped token and pass it securely to Ruger Bot.
+    Confirm the permissions by clicking **Authorize**. Discord will verify your identity and grant Ruger Bot access with the permissions you approved.
   </Step>
   <Step title="Land on your dashboard">
     You are automatically redirected to your Ruger Bot dashboard, where you'll see every server you manage or have been granted access to.
@@ -70,7 +70,7 @@ You can revoke Ruger Bot's access at any time directly from Discord.
 </Note>
 
 <Warning>
-  Ruger Bot never receives your Discord password. Authentication is handled entirely by Discord's OAuth2 flow, and Ruger Bot only holds a scoped access token with the permissions you explicitly approved.
+  Ruger Bot never receives your Discord password. Authentication is handled entirely by Discord's own login flow, and Ruger Bot can only perform the specific actions you explicitly approved — nothing more.
 </Warning>
 
 <Tip>
